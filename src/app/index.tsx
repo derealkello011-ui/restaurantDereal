@@ -1,98 +1,92 @@
-import * as Device from 'expo-device';
-import { Platform, StyleSheet } from 'react-native';
+import GradientButton from '@/components/gradientButton';
+import { LinearGradient } from 'expo-linear-gradient';
+import { useState } from 'react';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Bars3CenterLeftIcon, BellIcon } from 'react-native-heroicons/solid';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import '../global.css';
 
-import { AnimatedIcon } from '@/components/animated-icon';
-import { HintRow } from '@/components/hint-row';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { WebBadge } from '@/components/web-badge';
-import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
+const categories = ['Action', 'Family', 'Dereal', 'Puzzle', 'Adventure', 'Racing', 'Education']
 
-function getDevMenuHint() {
-  if (Platform.OS === 'web') {
-    return <ThemedText type="small">use browser devtools</ThemedText>;
-  }
-  if (Device.isDevice) {
-    return (
-      <ThemedText type="small">
-        shake device or press <ThemedText type="code">m</ThemedText> in terminal
-      </ThemedText>
-    );
-  }
-  const shortcut = Platform.OS === 'android' ? 'cmd+m (or ctrl+m)' : 'cmd+d';
+const StoreScreen = () => {
+  const [activeCategory, setActiveCategory] = useState('Action')
   return (
-    <ThemedText type="small">
-      press <ThemedText type="code">{shortcut}</ThemedText>
-    </ThemedText>
-  );
-}
+    <LinearGradient
+      colors={[ 'rgba(58, 131, 244, 0.4)', 'rgba(9, 181, 200, 0.4)' ]}   
+      className='flex-1 w-full'
+    >
+      <SafeAreaView>
+        <View >
+          <View className='flex-row justify-between items-center px-4'>
+            <Bars3CenterLeftIcon color={'#000000'} size={30} />
+            <BellIcon color={'#000000'} size={30} />
+          </View>
 
-export default function HomeScreen() {
-  return (
-    <ThemedView style={styles.container}>
-      <SafeAreaView style={styles.safeArea}>
-        <ThemedView style={styles.heroSection}>
-          <AnimatedIcon />
-          <ThemedText type="title" style={styles.title}>
-            Welcome to&nbsp;Expo
-          </ThemedText>
-        </ThemedView>
+          {/* Categories */}
+          <View className='space-y-3 mt-3'>
+            <Text
+              style={styles.text}
+              className='mb-3 ml-4 font-bold text-4xl'
+            >
+              Browse Games
+            </Text>
+            <View className='pl-4'>
+              <ScrollView horizontal
+                showsHorizontalScrollIndicator={false}
+              >
+                {
+                  categories.map( category => {
+                    if ( category === activeCategory ) {
+                      // Show Gradient category
+                      // let's create a gradient category
+                      <GradientButton value={category} containerClass='mr-2' key={category} />
+                    } else {
+                      // show normal Category
+                      return (
+                        <TouchableOpacity
+                          onPress={() => setActiveCategory(category) }
+                          key={category}
+                          className='bg-blue-200 mr-2 p-3 px-4 border border-slate-500/70 rounded-full'
+                        >
+                          <Text>{category}</Text>
+                        </TouchableOpacity>
+                      )
+                    }
+                  })
+                }
+                
+                </ScrollView>
+            </View>
+          </View>
 
-        <ThemedText type="code" style={styles.code}>
-          get started
-        </ThemedText>
-
-        <ThemedView type="backgroundElement" style={styles.stepContainer}>
-          <HintRow
-            title="Try editing"
-            hint={<ThemedText type="code">src/app/index.tsx</ThemedText>}
-          />
-          <HintRow title="Dev tools" hint={getDevMenuHint()} />
-          <HintRow
-            title="Fresh start"
-            hint={<ThemedText type="code">npm run reset-project</ThemedText>}
-          />
-        </ThemedView>
-
-        {Platform.OS === 'web' && <WebBadge />}
+          {/* Featured Row */}
+          <View className='space-y-4 mt-3'>
+            <Text
+              style={styles.text}
+              className='ml-4 font-bold text-2xl'
+            >
+              Featured Games
+            </Text>
+            <View className='pl-4'>
+              <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                
+                </ScrollView>
+            </View>
+          </View>
+        </View>
       </SafeAreaView>
-    </ThemedView>
-  );
+          
+    </LinearGradient>
+  )
 }
+
+export default StoreScreen
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'row',
+    
   },
-  safeArea: {
-    flex: 1,
-    paddingHorizontal: Spacing.four,
-    alignItems: 'center',
-    gap: Spacing.three,
-    paddingBottom: BottomTabInset + Spacing.three,
-    maxWidth: MaxContentWidth,
-  },
-  heroSection: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-    paddingHorizontal: Spacing.four,
-    gap: Spacing.four,
-  },
-  title: {
-    textAlign: 'center',
-  },
-  code: {
-    textTransform: 'uppercase',
-  },
-  stepContainer: {
-    gap: Spacing.three,
-    alignSelf: 'stretch',
-    paddingHorizontal: Spacing.three,
-    paddingVertical: Spacing.four,
-    borderRadius: Spacing.four,
-  },
+  text: {
+    color: '#000000',
+  }
 });
