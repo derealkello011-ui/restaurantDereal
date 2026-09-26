@@ -1,4 +1,5 @@
 import GradientButton from '@/components/gradientButton';
+import { dummyData } from '@/data/allData';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useState } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
@@ -6,17 +7,16 @@ import { Bars3CenterLeftIcon, BellIcon } from 'react-native-heroicons/solid';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import '../global.css';
 
-const categories = ['Action', 'Family', 'Dereal', 'Puzzle', 'Adventure', 'Racing', 'Education']
-
-const StoreScreen = () => {
+const HomeScreen = () => {
   const [activeCategory, setActiveCategory] = useState('Action')
   return (
     <LinearGradient
       colors={[ 'rgba(58, 131, 244, 0.4)', 'rgba(9, 181, 200, 0.4)' ]}   
-      className='flex-1 w-full'
+      className='w-full'
+      style={styles.container}
     >
-      <SafeAreaView>
-        <View >
+      <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
           <View className='flex-row justify-between items-center px-4'>
             <Bars3CenterLeftIcon color={'#000000'} size={30} />
             <BellIcon color={'#000000'} size={30} />
@@ -35,11 +35,12 @@ const StoreScreen = () => {
                 showsHorizontalScrollIndicator={false}
               >
                 {
-                  categories.map( category => {
+                  dummyData.map( category => {
                     if ( category === activeCategory ) {
                       // Show Gradient category
-                      // let's create a gradient category
-                      <GradientButton value={category} containerClass='mr-2' key={category} />
+                      return (
+                        <GradientButton value={category} containerClass='mr-2' key={category} />
+                      )
                     } else {
                       // show normal Category
                       return (
@@ -80,11 +81,11 @@ const StoreScreen = () => {
   )
 }
 
-export default StoreScreen
+export default HomeScreen
 
 const styles = StyleSheet.create({
   container: {
-    
+    flex: 1
   },
   text: {
     color: '#000000',
