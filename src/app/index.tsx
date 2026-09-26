@@ -1,5 +1,6 @@
+import GameCard from '@/components/gameCard';
 import GradientButton from '@/components/gradientButton';
-import { dummyData } from '@/data/allData';
+import { dummyData, dummyFeatureData } from '@/data/allData';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useState } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
@@ -8,7 +9,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import '../global.css';
 
 const HomeScreen = () => {
-  const [activeCategory, setActiveCategory] = useState('Action')
+  const [ activeCategory, setActiveCategory ] = useState( 'All' );
   return (
     <LinearGradient
       colors={[ 'rgba(58, 131, 244, 0.4)', 'rgba(9, 181, 200, 0.4)' ]}   
@@ -39,7 +40,7 @@ const HomeScreen = () => {
                     if ( category === activeCategory ) {
                       // Show Gradient category
                       return (
-                        <GradientButton value={category} containerClass='mr-2' key={category} />
+                        <GradientButton value={category} containerClass='mr-2 rounded-full' key={category} />
                       )
                     } else {
                       // show normal Category
@@ -64,15 +65,44 @@ const HomeScreen = () => {
           <View className='space-y-4 mt-3'>
             <Text
               style={styles.text}
-              className='ml-4 font-bold text-2xl'
+              className='mr-4 mb-4 ml-4 border-black/25 border-b-2 font-bold text-2xl'
             >
               Featured Games
             </Text>
-            <View className='pl-4'>
+            <View className='pl-safe-or-4 overflow-hidden'>
               <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                
-                </ScrollView>
+                {
+                  dummyFeatureData.map( ( item, index ) => {
+                    // Return a game card
+                    return (
+                      <GameCard key={index} game={item} />
+                    );
+                  })
+                }  
+              </ScrollView>
             </View>
+          </View>
+
+          {/** Top action games list */}
+          <View className='mt-4 mr-4 mb-4 ml-4 border-black/25 border-b-2'>
+            <View className='flex-row justify-between items-center mr-4 mb-2'>
+              <Text
+                style={styles.text}
+                className='font-bold text-2xl'
+                >
+                  Top Action Games
+              </Text>
+              <TouchableOpacity>
+                <Text className='font-bold text-blue-600'>
+                  See All
+                </Text>
+              </TouchableOpacity>
+            </View>
+            <ScrollView style={styles.topAction}>
+              { 
+                // Game list
+              }
+            </ScrollView>
           </View>
         </View>
       </SafeAreaView>
@@ -89,5 +119,8 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#000000',
+  },
+  topAction: {
+    height: 320
   }
 });
