@@ -38,7 +38,7 @@ export const dummyFeatureData: FeatureDataProps[] = [
         image: images[0], // chrisBae
         downloads: '200k',
         stars: 4,
-        category: ['Action', 'Adventure'],
+        category: ['All', 'Action', 'Adventure'],
     },
     {
         id: 2,
@@ -46,7 +46,7 @@ export const dummyFeatureData: FeatureDataProps[] = [
         image: images[3], // mariaSurfer
         downloads: '5M',
         stars: 5,
-        category: ['Adventure', 'Action']
+        category: ['All', 'Adventure', 'Action']
     },
     {
         id: 3,
@@ -54,7 +54,7 @@ export const dummyFeatureData: FeatureDataProps[] = [
         image: images[2], // hacking
         downloads: '100M',
         stars: 6,
-        category: ['Action', 'Dereal']
+        category: ['All', 'Action', 'Dereal']
     },
     {
         id: 4,
@@ -62,7 +62,7 @@ export const dummyFeatureData: FeatureDataProps[] = [
         image: images[1], // jsCourse
         downloads: '20k',
         stars: 4,
-        category: ['Education', 'Family']
+        category: ['All', 'Education', 'Family']
     },
     {
         id: 5,
@@ -70,7 +70,7 @@ export const dummyFeatureData: FeatureDataProps[] = [
         image: images[5], // android
         downloads: '1M',
         stars: 3,
-        category: ['Puzzle', 'Family']
+        category: ['All', 'Puzzle', 'Family']
     },
     {
         id: 6,
@@ -78,7 +78,7 @@ export const dummyFeatureData: FeatureDataProps[] = [
         image: images[4], // mariaSurfer2
         downloads: '20M',
         stars: 5,
-        category: ['Dereal', 'Adventure', 'Family']
+        category: ['All', 'Dereal', 'Adventure', 'Family']
     },
     {
         id: 7,
@@ -86,7 +86,7 @@ export const dummyFeatureData: FeatureDataProps[] = [
         image: images[6], // chrisBaeDemo
         downloads: '200k',
         stars: 6,
-        category: ['Family', 'Education']
+        category: ['All', 'Family', 'Education']
     },
     {
         id: 8,
@@ -94,7 +94,7 @@ export const dummyFeatureData: FeatureDataProps[] = [
         image: images[0], // chrisBae (reused - no dedicated image yet)
         downloads: '40k',
         stars: 5,
-        category: ['Racing', 'Adventure']
+        category: ['All', 'Racing', 'Adventure']
     }
 
 ]
@@ -102,27 +102,27 @@ export const dummyFeatureData: FeatureDataProps[] = [
 export const games: FeatureDataProps[] = [
     {
         id: 1,
-        title: 'Adidas',
+        title: 'Adidas War',
         image: adidas,
         downloads: '10M',
         stars: 4,
-        category: ['All']
+        category: ['All', 'Adventure']
     },
     {
         id: 2,
-        title: 'Araba',
+        title: 'Araba Constitutional Assistant',
         image: araba,
         downloads: '500k',
         stars: 5,
-        category: ['Dereal', 'Education']
+        category: ['All', 'Dereal', 'Education']
     },
     {
         id: 3,
-        title: 'Battle Games',
+        title: 'OG Battle Games',
         image: battleGames,
         downloads: '50M',
         stars: 4,
-        category: ['Action']
+        category: ['All', 'Action']
     },
     {
         id: 4,
@@ -130,7 +130,7 @@ export const games: FeatureDataProps[] = [
         image: bloodstrike,
         downloads: '80M',
         stars: 4,
-        category: ['Action']
+        category: ['All', 'Action']
     },
     {
         id: 5,
@@ -138,7 +138,7 @@ export const games: FeatureDataProps[] = [
         image: cn,
         downloads: '20M',
         stars: 4,
-        category: ['Family']
+        category: ['All', 'Family']
     },
     {
         id: 6,
@@ -146,7 +146,7 @@ export const games: FeatureDataProps[] = [
         image: derealCode,
         downloads: '10k',
         stars: 5,
-        category: ['Dereal', 'Education']
+        category: ['All', 'Dereal', 'Education']
     },
     {
         id: 7,
@@ -154,7 +154,7 @@ export const games: FeatureDataProps[] = [
         image: derealFinite,
         downloads: '5k',
         stars: 4,
-        category: ['Dereal']
+        category: ['All', 'Dereal']
     },
     {
         id: 8,
@@ -162,7 +162,7 @@ export const games: FeatureDataProps[] = [
         image: derealNight,
         downloads: '8k',
         stars: 5,
-        category: ['Dereal']
+        category: ['All', 'Dereal']
     },
     {
         id: 9,
@@ -170,7 +170,7 @@ export const games: FeatureDataProps[] = [
         image: drive,
         downloads: '1B',
         stars: 4,
-        category: ['Education']
+        category: ['All', 'Education']
     },
     {
         id: 10,
@@ -178,15 +178,15 @@ export const games: FeatureDataProps[] = [
         image: eaSports,
         downloads: '100M',
         stars: 4,
-        category: ['Action', 'Racing']
+        category: ['All', 'Action', 'Racing']
     },
     {
         id: 11,
-        title: 'Faith',
+        title: 'Faith Uzumaki',
         image: faith,
         downloads: '2M',
         stars: 3,
-        category: ['Family']
+        category: ['All', 'Family']
     },
     {
         id: 12,
@@ -194,7 +194,7 @@ export const games: FeatureDataProps[] = [
         image: fortnite,
         downloads: '500M',
         stars: 5,
-        category: ['Action', 'Adventure']
+        category: ['All', 'Action', 'Adventure']
     },
     {
         id: 13,
@@ -202,7 +202,7 @@ export const games: FeatureDataProps[] = [
         image: freeFire,
         downloads: '1B',
         stars: 4,
-        category: ['Action']
+        category: ['All', 'Action']
     },
     {
         id: 14,
@@ -210,7 +210,7 @@ export const games: FeatureDataProps[] = [
         image: godOfWar,
         downloads: '10M',
         stars: 5,
-        category: ['Action', 'Adventure']
+        category: ['All', 'Action', 'Adventure']
     },
     {
         id: 15,
@@ -218,7 +218,7 @@ export const games: FeatureDataProps[] = [
         image: gtaV,
         downloads: '100M',
         stars: 5,
-        category: ['Action', 'Adventure']
+        category: ['All', 'Action', 'Adventure']
     },
     {
         id: 16,
@@ -226,7 +226,7 @@ export const games: FeatureDataProps[] = [
         image: gtaVC,
         downloads: '50M',
         stars: 5,
-        category: ['Action', 'Adventure']
+        category: ['All', 'Action', 'Adventure']
     },
     {
         id: 17,
@@ -234,7 +234,7 @@ export const games: FeatureDataProps[] = [
         image: gtaVI,
         downloads: '20M',
         stars: 5,
-        category: ['Action', 'Adventure']
+        category: ['All', 'Action', 'Adventure']
     },
     {
         id: 18,
@@ -242,7 +242,7 @@ export const games: FeatureDataProps[] = [
         image: leagueLegends,
         downloads: '150M',
         stars: 4,
-        category: ['Action', 'Puzzle']
+        category: ['All', 'Action', 'Puzzle']
     },
     {
         id: 19,
@@ -250,7 +250,7 @@ export const games: FeatureDataProps[] = [
         image: mineCraft,
         downloads: '300M',
         stars: 5,
-        category: ['Puzzle', 'Family', 'Education']
+        category: ['All', 'Puzzle', 'Family', 'Education']
     },
     {
         id: 20,
@@ -258,7 +258,7 @@ export const games: FeatureDataProps[] = [
         image: mk4,
         downloads: '50M',
         stars: 4,
-        category: ['Action']
+        category: ['All', 'Action']
     },
     {
         id: 21,
@@ -266,7 +266,7 @@ export const games: FeatureDataProps[] = [
         image: modernCombat,
         downloads: '80M',
         stars: 4,
-        category: ['Action']
+        category: ['All', 'Action']
     },
     {
         id: 22,
@@ -274,7 +274,7 @@ export const games: FeatureDataProps[] = [
         image: moodle,
         downloads: '5M',
         stars: 3,
-        category: ['Education']
+        category: ['All', 'Education']
     },
     {
         id: 23,
@@ -282,7 +282,7 @@ export const games: FeatureDataProps[] = [
         image: msWord,
         downloads: '1B',
         stars: 4,
-        category: ['Education']
+        category: ['All', 'Education']
     },
     {
         id: 24,
@@ -290,7 +290,7 @@ export const games: FeatureDataProps[] = [
         image: pubg,
         downloads: '600M',
         stars: 4,
-        category: ['Action', 'Adventure']
+        category: ['All', 'Action', 'Adventure']
     },
     {
         id: 25,
@@ -298,7 +298,7 @@ export const games: FeatureDataProps[] = [
         image: redDead,
         downloads: '20M',
         stars: 5,
-        category: ['Action', 'Adventure']
+        category: ['All', 'Action', 'Adventure']
     },
     {
         id: 26,
@@ -306,7 +306,7 @@ export const games: FeatureDataProps[] = [
         image: rockstar,
         downloads: '30M',
         stars: 4,
-        category: ['Action']
+        category: ['All', 'Action']
     },
     {
         id: 27,
@@ -314,6 +314,6 @@ export const games: FeatureDataProps[] = [
         image: smoker,
         downloads: '1M',
         stars: 3,
-        category: ['Puzzle', 'Education']
+        category: ['All', 'Puzzle', 'Education']
     }
 ]

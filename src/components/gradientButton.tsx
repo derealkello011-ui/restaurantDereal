@@ -19,7 +19,7 @@ const GradientButton = ( props: {
           }}
       >
           <TouchableOpacity
-              className={`border border-white rounded-full p-3 px-4 ${props.buttonClass}`}
+              className={`border border-white rounded-full p-3 px-4 min-w-20 items-center justify-center ${props.buttonClass}`}
           >
               <Text className='font-bold text-white'>
                   {props.value}

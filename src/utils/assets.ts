@@ -1,7 +1,6 @@
 import android from '@/assets/resources/android.jpg';
 import chrisBaeDemo from '@/assets/resources/chris_bae-demo.jpg';
 import chrisBae from '@/assets/resources/chris_bae.jpg';
-import hacking from '@/assets/resources/hacking.jpg';
 import jsCourse from '@/assets/resources/js_course.jpg';
 import mariaSurfer from '@/assets/resources/maria_surfer.jpg';
 import mariaSurfer2 from '@/assets/resources/maria_surfer2.jpg';
@@ -37,7 +36,7 @@ import smoker from '@/assets/apps/smoker.jpg';
 
 export const images = [
     chrisBae, jsCourse,
-    hacking, mariaSurfer,
+    freeFire, mariaSurfer,
     mariaSurfer2, android,
     chrisBaeDemo
 ] as const;
